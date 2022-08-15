@@ -40,3 +40,13 @@ Linux Permissions
 To ensure the CH341 programmer will be set up with proper permissions on a Linux computer, run the following command to install a udev rule file into /etc/udev/rules.d:
 
 `sudo make install-udev-rule`
+
+Apple M1
+--------
+If brew is used to link libusb, add the following path to build:
+
+`-I/opt/homebrew/Cellar/libusb/1.0.26/include`
+
+or you can type `brew list libusb` to find the correct path on your system. You also need to build under Rosseta 2 if the libusb arch is macOS-x86_64:
+
+`arch --x86_64 make`

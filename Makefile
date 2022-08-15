@@ -8,7 +8,7 @@ man1dir = $(mandir)/man1
 
 CFLAGS=-std=gnu99 -Wall
 $(PKG): main.c ch341a.c ch341a.h
-	gcc $(CFLAGS) ch341a.c main.c -o $(PKG)  -lusb-1.0
+	gcc $(CFLAGS) ch341a.c main.c -o $(PKG)  -I/opt/homebrew/Cellar/libusb/1.0.26/include -lusb-1.0
 clean:
 	rm *.o $(PKG) -f
 install-udev-rule:
